@@ -1,3 +1,4 @@
+import Navbar from "../Component/navbar";
 import { fetchData } from "../Helper";
 import { Outlet, useLoaderData } from "react-router-dom";
 
@@ -8,12 +9,12 @@ export function MainLoader() {
 function Main() {
   const { userName } = useLoaderData();
   return (
-    <div>
-    navbar
+    <div className="layout">
+    <Navbar userName={userName}/>
       <main>
         <Outlet />
       </main>
-      img
+      <img src="../../dist/assets/wave.svg"/>
     </div>
   );
 }
